@@ -1,11 +1,10 @@
 import { FC } from "react";
-import classNames from "classnames";
 
-import classes from "./Navbar.module.scss";
+import "./Navbar.css";
 
 const Navbar: FC = () => {
   return (
-    <nav className={classNames("navbar", [classes.Navbar])}>
+    <nav className="Navbar">
         <h2>Gazdasági hírek</h2>
     </nav>
   );

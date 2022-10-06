@@ -1,0 +1,8 @@
+.Navbar{
+    color: white;
+    background: skyblue;
+    height: 2cm;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
