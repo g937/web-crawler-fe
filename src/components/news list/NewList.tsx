@@ -3,7 +3,7 @@ import NewsItem from "../news item/NewsItem";
 
 const NewsList = (props: any) => {
   const renderedList = props.news.map((news: NewsModel) => {
-    return <NewsItem news={news} />;
+    return <NewsItem key={news.id} news={news} />;
   });
   return (
     <div className="ui segment">

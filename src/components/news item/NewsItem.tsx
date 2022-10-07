@@ -1,15 +1,16 @@
-import './NewsItem.css'
+import { Link } from "react-router-dom";
+import "./NewsItem.css";
 
-const NewsItem = ({news}: any) => {
+const NewsItem = ({ news }: any) => {
   return (
-    <div className="news-item item">
-      <img className="ui image" src={news.coverUrl} />
-      <div className="content">
-        <div className="header">
-          {news.title}
+    <Link className="item" to={`/news/${news.id}`}>
+      <div className="news-item item">
+        <img alt={news.title} className="ui image" src={news.coverUrl ? news.coverUrl : '/noImage.png'} />
+        <div className="content">
+          <div className="header">{news.title}</div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

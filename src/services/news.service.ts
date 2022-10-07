@@ -6,7 +6,7 @@ class NewsService {
     return request<NewsModel[]>({ method: Methods.GET, resource: "news" });
   }
 
-  async getNew(id: string) {
+  async getOne(id: string) {
     return request<NewsModel>({ resource: `news/${id}`, method: Methods.GET });
   }
 }

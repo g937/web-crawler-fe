@@ -4,6 +4,11 @@
     cursor: pointer;
 }
 
+.news-item .content{
+    padding-left: 1em;
+
+}
+
 .news-item.item img {
     max-width: 300px;
 }
