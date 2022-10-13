@@ -16,12 +16,12 @@ const MainPage = () => {
     fetchNews();
   }, []);
 
-  const main = news[0];
+  const [main, ...rest] = news;
 
   return (
     <div>
       <MainNews main={main} />
-      <NewsList news={news} />
+      <NewsList news={rest} />
     </div>
   );
 };

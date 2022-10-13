@@ -9,7 +9,7 @@ const MainNews = (props: any) => {
     <div>
       <div className="main-segment">
         <div className="picture">
-          <img src={props.main.coverUrl} />
+          <img alt={props.main.title} src={props.main.coverUrl} />
         </div>
         <h4 className="ui header">{props.main.title}</h4>
         <p>{props.main.lead}</p>
