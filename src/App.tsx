@@ -16,7 +16,7 @@ class App extends Component<AppProps, AppState> {
         <header>
           <Navbar />
         </header>
-        <div className="ui container">
+        <div className="ui container" style={{paddingBottom: "2rem"}}>
           <Routes>
             <Route path="/news/:id" element={<NewsDetailPage />} />
             <Route path="/news" element={<MainPage />} />
