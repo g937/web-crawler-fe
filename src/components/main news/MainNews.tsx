@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./MainNews.css";
 
 const MainNews = (props: any) => {
@@ -7,13 +8,16 @@ const MainNews = (props: any) => {
 
   return (
     <div>
-      <div className="main-segment">
+      <Link className="link" to={`/news/${props.main.id}`}>
+      <div className="main-news">
         <div className="picture">
-          <img alt={props.main.title} src={props.main.coverUrl} />
+          <img alt={props.main?.title} src={props.main?.coverUrl ? props.main?.coverUrl : '/no-image.png'} />
         </div>
-        <h4 className="ui header">{props.main.title}</h4>
-        <p>{props.main.lead}</p>
+        <h3 className="ui header">{props.main?.title}</h3>
+        <p>{props.main?.lead}</p>
+        <p className="date">{props.main?.date}</p>
       </div>
+      </Link>
     </div>
   );
 };
