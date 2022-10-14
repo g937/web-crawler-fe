@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import { NewsModel } from "../models/news.model";
-import { newsService } from "../services/news.service";
+import { NewsModel } from "../../models/news.model";
+import { newsService } from "../../services/news.service";
 import './NewsDetail.css';
 
 const NewsDetailPage = () => {
