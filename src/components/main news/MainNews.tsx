@@ -11,7 +11,7 @@ const MainNews = (props: any) => {
       <Link className="link" to={`/news/${props.main.id}`}>
       <div className="main-news">
         <div className="picture">
-          <img alt={props.main?.title} src={props.main?.coverUrl ? props.main?.coverUrl : '/no-image.png'} />
+          <img className="image" alt={props.main?.title} src={props.main?.coverUrl ? props.main?.coverUrl : '/no-image.png'} />
         </div>
         <h3 className="ui header">{props.main?.title}</h3>
         <p>{props.main?.lead}</p>

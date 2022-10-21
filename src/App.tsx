@@ -2,8 +2,8 @@ import { Component } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 
 import Navbar from "./components/navbar/Navbar";
-import MainPage from "./pages/MainPage";
-import NewsDetailPage from "./pages/NewsDetailPage";
+import MainPage from "./pages/main/MainPage";
+import NewsDetailPage from "./pages/news-detail/NewsDetailPage";
 
 interface AppProps {}
 
@@ -16,7 +16,7 @@ class App extends Component<AppProps, AppState> {
         <header>
           <Navbar />
         </header>
-        <div className="ui container" style={{paddingBottom: "2rem"}}>
+        <div className="ui container" style={{paddingBottom: "1rem"}}>
           <Routes>
             <Route path="/news/:id" element={<NewsDetailPage />} />
             <Route path="/news" element={<MainPage />} />

@@ -8,7 +8,7 @@ const NewsItem = ({ news }: any) => {
         <img alt={news.title} className="ui image" src={news.coverUrl ? news.coverUrl : '/no-image.png'} />
         <div className="content">
           <p className="date">{news?.date}</p>
-          <h4 className="header">{news.title}</h4>
+          <h3 className="header">{news.title}</h3>
           <p className="item-lead">{news?.lead}</p>
         </div>
       </div>
