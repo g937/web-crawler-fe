@@ -5,5 +5,5 @@ export interface NewsModel {
   content: string;
   link: string;
   coverUrl: string;
-  date: string;
+  date: Date;
 }

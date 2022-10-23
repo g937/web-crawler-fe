@@ -1,6 +1,11 @@
 .pages {
-    display: flex;
+  display: flex;
+  margin: 1rem 0;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 600px) {
+  .pages {
     justify-content: right;
-    align-items: right;
-    margin: 1rem 0;
+  }
 }
