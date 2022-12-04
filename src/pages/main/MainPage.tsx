@@ -1,19 +1,21 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { Pagination, PaginationProps } from "semantic-ui-react";
+import { PaginationProps } from "semantic-ui-react";
 
-import NewsList from "../../components/news list/NewList";
 import { NewsModel } from "../../models/news.model";
 import { newsService } from "../../services/news.service";
-import MainNews from "../../components/main news/MainNews";
+import NewsList from "../../components/news-list/NewsList";
+import MainNews from "../../components/main-news/MainNews";
+import Pagination from "../../components/pagination/Pagination";
 import "./MainPage.css";
 
 const MainPage = () => {
-  const [news, setNews] = useState<NewsModel[]>([]);
-  const [activePage, setActivePage] = useState(1);
-  const [apiUrl, setApiUrl] = useState("http://localhost:3001/api/");
   const navigate = useNavigate();
   const { pathname, search } = useLocation();
+  const [news, setNews] = useState<NewsModel[]>([]);
+  const [activePage, setActivePage] = useState(
+    search !== "" ? parseInt(search.split("=")[1]) : 1
+  );
 
   useEffect(() => {
     const fetchNews = async (activePage: number) => {
@@ -24,7 +26,7 @@ const MainPage = () => {
     fetchNews(activePage);
   }, [activePage]);
 
-  let main = null;
+  let main: NewsModel = news[0];
   let rest: NewsModel[] = [];
 
   if (activePage === 1 && news.length) {
@@ -41,10 +43,8 @@ const MainPage = () => {
           ? Number.parseInt(pageInfo.activePage, 10)
           : pageInfo.activePage;
       setActivePage(page);
-      setApiUrl(
-        "http://localhost:3001/api/?page=" + pageInfo.activePage.toString()
-      );
     }
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -62,9 +62,8 @@ const MainPage = () => {
       <div className="pages">
         <Pagination
           activePage={activePage}
-          onPageChange={(_, data) => onChange(data)}
+          onPageChange={(e:any, data:any) => onChange(data)}
           totalPages={10}
-          ellipsisItem={null}
         />
       </div>
     </div>

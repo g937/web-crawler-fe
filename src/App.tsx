@@ -1,26 +1,22 @@
-import { Component } from "react";
+import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 
-import Navbar from "./components/navbar/Navbar";
+import Header from "./components/header/Header";
 import MainPage from "./pages/main/MainPage";
 import NewsDetailPage from "./pages/news-detail/NewsDetailPage";
+import "./App.css";
 
-interface AppProps {}
-
-interface AppState {}
-
-class App extends Component<AppProps, AppState> {
+class App extends React.Component {
   render() {
     return (
       <div>
         <header>
-          <Navbar />
+          <Header />
         </header>
-        <div className="ui container" style={{paddingBottom: "1rem"}}>
+        <div className="ui-container">
           <Routes>
             <Route path="/news/:id" element={<NewsDetailPage />} />
             <Route path="/news" element={<MainPage />} />
-
             <Route path="*" element={<Navigate to="/news" replace />} />
           </Routes>
         </div>

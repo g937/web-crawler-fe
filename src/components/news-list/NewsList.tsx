@@ -1,8 +1,12 @@
 import { NewsModel } from "../../models/news.model";
-import NewsItem from "../news item/NewsItem";
+import NewsItem from "../news-item/NewsItem";
 
-const NewsList = (props: any) => {
-  const renderedList = props.news.map((news: NewsModel) => {
+interface NewsListProps {
+  news: NewsModel[];
+}
+
+const NewsList = ({ news }: NewsListProps) => {
+  const renderedList = news.map((news: NewsModel) => {
     return <NewsItem key={news.id} news={news} />;
   });
   return (
